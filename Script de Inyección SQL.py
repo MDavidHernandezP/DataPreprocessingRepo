@@ -1,16 +1,32 @@
 """
--- Crear la tabla usuarios
-CREATE TABLE usuarios (
-    id INT PRIMARY KEY,
-    nombre VARCHAR(255),
-    edad INT
+-- Crear la tabla (ALMACEN POR SUCURSAL RESUMEN)
+CREATE TABLE TICKETS DETALLE (
+    ID_Sucursal _Pedido INT PRIMARY KEY,
+    ID_Sucrsal INT,
+    ID_Pedido INT,
+    ID_Empleado_Recibio INT,
+    TS_Ingreso INT
 );
 """
 
-import sqlite3
+"""
+-- Crear la tabla (TICKETS DETALLE)
+CREATE TABLE TICKETS DETALLE (
+    ID_ProductosTicket INT PRIMARY KEY,
+    ID_Ticket INT,
+    ID_Producto INT,
+    Cantidad INT,
+    Subtotal_Producto INT
+);
+"""
+import pyodbc
 
-# Conectar a la base de datos SQLite (si no existe, se creará)
-conexion = sqlite3.connect('mi_base_de_datos.db')
+# Conectar a la base de datos de SQL Server
+conexion = pyodbc.connect('DRIVER={SQL Server};'
+                          'SERVER=BATLAPTOP-MKN6N;'
+                          'DATABASE=master;'
+                          'UID=nombre_de_usuario;'
+                          'PWD=contraseña')
 
 # Crear un cursor para ejecutar comandos SQL
 cursor = conexion.cursor()

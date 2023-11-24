@@ -26,6 +26,6 @@ SELECT * FROM test
 
 -- Delete: Pues para eliminar
 DELETE FROM test
-	WHERE (FullBath = 2, HalfBath = 2, Street = 'Sascab');
+	WHERE FullBath = 2 AND HalfBath = 2 AND Street = 'Sascab';
 
 -- Concatenate: Sirve para añadir columnas.
